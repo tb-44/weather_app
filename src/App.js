@@ -1,26 +1,49 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import "./App.css";
+import hourglass from "./images/download.svg";
+import { reset } from "./reducer/weather";
+import CurrentWeather from "./components/CurrentWeather/CurrentWeather";
+import EnterLocation from "./components/EnterLocation/EnterLocation";
+import ErrorMessage from "./components/ErrorMessage/ErrorMessage";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  renderChildren() {
+    const {
+      error,
+      loading,
+      search,
+      weather,
+      reset
+    } = this.props;
+
+    if (error) {
+      return <ErrorMessage reset={reset} />
+    }
+
+    if (loading) {
+      return (
+        <img alt="loading indicator" src={hourglass} />
+      )
+    }
+
+    if (search) {
+      return <EnterLocation />
+    }
+
+    return (
+      <CurrentWeather reset={reset} weather={weather} />
+    )
+  }
+
+  render() {
+    return (
+      <div className="app">
+        <h1 className="app__title">WEATHER APP</h1>
+        {this.renderChildren()}
+      </div>
+    );
+  }
 }
 
-export default App;
+export default connect(state => state, { reset })(App);
