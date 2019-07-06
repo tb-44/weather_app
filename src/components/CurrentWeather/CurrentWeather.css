@@ -1,0 +1,57 @@
+.current-weather {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.current-weather_weather {
+    align-items: center;
+    background-color: rgba(11, 15, 107, 0.6);
+    border-radius: 5px;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    height: 550px;
+    width: 350px;
+}
+
+.current-weather_icon {
+    height: auto;
+    width: 40%;
+}
+
+.current-weather_temp,
+.current-weather_location {
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.current-weather_separator {
+    background-color: #ffffff;
+    height: 1px;
+    margin-bottom: 10px;
+    width: 90%;
+}
+
+.current-weather_stats {
+    list-style: none;
+    padding: 0;
+}
+
+.current-weather_stat {
+    margin-bottom: 10px;
+}
+
+.current-weather_search-again {
+    background-color: #d0393b;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 20px;
+    height: 45px;
+    margin-top: 20px;
+    width: 100%;
+}

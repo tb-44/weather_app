@@ -4,8 +4,9 @@ import rain from "../images/rain.svg";
 import snow from "../images/snow.svg";
 import sunny from "../images/sunny.svg";
 import downLoad from "../images/download.svg";
+import API_KEY from "../apiKey";
 
-const BASE_URL = ``;
+const BASE_URL = `http://api.openweathermap.org/data/2.5/weather?APPID=${ API_KEY }&units=imperial&`;
 
 function isZipCode(location) {
     return !isNaN(parseInt(location));

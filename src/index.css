@@ -1,10 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Muli|Nunito|Oswald|PT+Sans+Narrow|Raleway|Roboto|Rubik&display=swap');
+
 * {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 300;
 }
 
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }

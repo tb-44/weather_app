@@ -1,5 +1,18 @@
 import { createStore, applyMiddleware } from "redux";
-import promiseMiddleware from "redux-promise-middleware";
+import { createLogger } from "redux-logger";
+import * as thunk from "redux-thunk";
 import weather from "./reducer/weather";
 
-export default createStore(weather, undefined, applyMiddleware(promiseMiddleware()));
+const logger = createLogger();
+
+export default createStore(
+    weather,
+    {},
+    applyMiddleware(logger, thunk.default)
+  );
+
+  
+
+  
+
+  
