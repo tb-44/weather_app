@@ -6,7 +6,8 @@ import sunny from "../images/sunny.svg";
 import downLoad from "../images/download.svg";
 import API_KEY from "../apiKey";
 
-const BASE_URL = `http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=${ API_KEY }`;
+const BASE_URL = `http://api.openweathermap.org/data/2.5/weather?APPID=${ API_KEY }`;
+//console.log(BASE_URL)
 
 function isZipCode(location) {
     return !isNaN(parseInt(location));
